@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private static native String hello(final String to);
     private static native String getTitle(final String webcontent);
     private static native boolean buildDatabase(final String webcontent);
-
+    // test 2
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
