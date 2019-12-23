@@ -11,11 +11,20 @@ import java.util.concurrent.ExecutionException;
 public class MainActivity extends AppCompatActivity {
 
     private static native String hello(final String to);
+    private static native String getTitle(final String webcontent);
+    private static native boolean buildDatabase(final String webcontent);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Load rust library
+        System.loadLibrary("rust");
+        Log.d("Rust", this.hello("IMPP"));
+
+        String r = this.hello("Android_4");
 
         // Download google sheet
         Downloader task = new Downloader();
@@ -28,17 +37,32 @@ public class MainActivity extends AppCompatActivity {
 
             largeLog("Content", result);
 
+
+            //r = this.getTitle(result);
+
+            boolean databaseResult =  buildDatabase(result);
+
+            if (databaseResult == true){
+
+                r = "TRUE";
+            }
+
+            else if (databaseResult == false){
+
+                r = "FALSE";
+            }
+
+            else {
+
+                r = "SHIT";
+            }
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
 
-        //Load rust library
-        System.loadLibrary("rust");
-        Log.d("Rust", this.hello("IMPP"));
-
-        String r = this.hello("Android_4");
 
         ((TextView)findViewById(R.id.hello)).setText(r);
 
