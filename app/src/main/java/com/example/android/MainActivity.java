@@ -1,5 +1,6 @@
 package com.example.android;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -19,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Context context = getApplicationContext();
+        String path = context.getFilesDir().getAbsolutePath();
+        Log.d("Test", path);
 
         //Load rust library
         System.loadLibrary("rust");
@@ -63,12 +68,12 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
         ((TextView)findViewById(R.id.hello)).setText(r);
 
 
     }
 
+    // print a string by dividing it into parts of 1000 characters
     public static void largeLog(String tag, String content) {
        if (content.length() > 1000) {
            Log.d(tag, content.substring(0, 1000));
