@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/backdrop_rounded_front"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="2dp"
+    android:clickable="false"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+
+    <TextView
+        android:id="@+id/category"
+        android:text="Category: All"
+        android:layout_gravity="left"
+        android:layout_width="match_parent"
+        android:textSize="12sp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        app:textAllCaps="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:clickable="false"
+        />
+
+    <TextView
+        android:id="@+id/question"
+        android:text="Empty question"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:textSize="24sp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="36dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:clickable="false"
+        />
+
+    <ListView
+        android:id="@+id/simpleListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E4F4FF"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent"
+        />
+
+</LinearLayout>

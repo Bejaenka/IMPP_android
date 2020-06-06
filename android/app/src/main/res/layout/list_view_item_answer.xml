@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp"
+    android:paddingTop="4dp"
+    android:descendantFocusability="blocksDescendants"
+    android:id="@+id/layoutBox"
+    >
+
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_answer"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:foreground="?attr/selectableItemBackground"
+            card_view:cardElevation="0dp"
+            >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    >
+
+                        <TextView
+                            android:id="@+id/letterNumber"
+                            android:text="A"
+                            android:layout_gravity="left|center"
+                            android:layout_width="42dp"
+                            android:layout_height="42dp"
+                            android:gravity="center"
+                            android:textSize="24sp"
+                            android:textColor="@color/colorAccent"
+                            app:textAllCaps="true"
+                            android:background="@drawable/circle_answer_letter"
+                            />
+                        <LinearLayout
+                            android:id="@+id/answerText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
+                            android:orientation="vertical"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:paddingLeft="12dp"
+                            android:layout_gravity="left|center"
+                            >
+                                <TextView
+                                    android:id="@+id/textView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Empty "
+                                    android:layout_gravity="left|center"
+                                    android:textSize="14sp"
+                                    />
+                        </LinearLayout>
+                </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+</LinearLayout>

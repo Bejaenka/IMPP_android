@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Grow</string>
+    <string name="navigate_next">Next</string>
+    <string name="labelURL">Your URL</string>
+    <string name="loadSheetButton">Load sheet</string>
+    <string name="text_sample_table">I want to use a sample Google sheet table.</string>
+</resources>
